@@ -58,6 +58,10 @@ Initial release of JSON Multiline Viewer
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
+## Repository
+
+- [GitHub Repository](https://github.com/RylynnWang/JSON-Multiline-Viewer-VScode-Extension)
+
 ## Following extension guidelines
 
 Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
