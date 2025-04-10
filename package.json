@@ -1,0 +1,62 @@
+{
+  "name": "json-multiline-viewer",
+  "displayName": "json-multi-line-viewer",
+  "description": "A VSCode extension to view multiline strings in JSON files",
+  "version": "0.0.1",
+  "publisher": "RylynnWang",
+  "author": {
+    "name": "RylynnWang",
+    "url": "https://github.com/RylynnWang"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RylynnWang/json-multiline-viewer"
+  },
+  "engines": {
+    "vscode": "^1.60.0"
+  },
+  "extensionKind": ["ui", "workspace"],
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onLanguage:json"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "json-multiline-viewer.showMultilineContent",
+        "title": "Show content in multiline viewer"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "json-multiline-viewer.showMultilineContent",
+          "when": "editorLangId == json && editorHasSelection",
+          "group": "navigation"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.60.0",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "20.x",
+    "@typescript-eslint/eslint-plugin": "^8.28.0",
+    "@typescript-eslint/parser": "^8.28.0",
+    "eslint": "^9.23.0",
+    "typescript": "^5.8.2",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.4.1"
+  }
+}
